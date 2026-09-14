@@ -5,7 +5,7 @@ from pathlib import Path
 from flask import Flask, jsonify, request, send_file
 
 APP_DIR = Path(__file__).resolve().parent
-HTML = APP_DIR / "PLATAFORMA_NOTARIAL_INTEGRADA_BETA_CARTORIO_1.html"
+HTML = APP_DIR / "index.html"
 MAX_UPLOAD_MB = int(os.environ.get("MAX_UPLOAD_MB", "40"))
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = MAX_UPLOAD_MB * 1024 * 1024

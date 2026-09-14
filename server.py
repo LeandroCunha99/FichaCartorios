@@ -73,7 +73,7 @@ def ocr_health():
 
 @app.post("/api/ocr/extract")
 def ocr_extract():
-    f = request.files.get("file")
+    f = request.files.get("file") or next(iter(request.files.values()), None)
     if not f:
         return jsonify({"ok": False, "error": "Arquivo não recebido."}), 400
     try:
